@@ -1,0 +1,15 @@
+[8s] world: 551574 S1, 2582119 pool
+  US: highest-ratio frequent tokens: [('dba', 7.27), ('formerly', 7.04), ('greater', 6.85), ('eastgate', 6.84), ('lakeside', 6.84), ('midtown', 6.84), ('northside', 6.84), ('southside', 6.22), ('doing', 5.92), ('aka', 5.86), ('westgate', 5.83), ('riverside', 5.8)]
+  India: highest-ratio frequent tokens: [('limittedd', 10.1), ('praaivett', 9.53), ('praiveett', 8.38), ('praa', 8.06), ('smt', 7.93), ('limittett', 7.71), ('praaibhett', 7.69), ('piraiveett', 7.56), ('elelpii', 7.31), ('limirrrrdd', 7.13), ('ttek', 7.06), ('praivrrrr', 6.99)]
+  India: main channel 6033 queries x 1030999 pool [95s]
+  US: main channel 8967 queries x 1551120 pool [201s]
+[226s] 449972 pairs
+[269s] features built
+
+hard pairs (name_sim>=80 and candidate has extra words): 42691 pairs, 0.262 are true matches
+  AUC of 'ex_count' for telling true matches from decoys: 0.499
+  AUC of 'ex_max_ratio' for telling true matches from decoys: 0.198
+  AUC of 'ex_mean_ratio' for telling true matches from decoys: 0.183
+  AUC of 'ex_n_decoyish' for telling true matches from decoys: 0.352
+US {'holdings': 1.29, 'enterprises': -0.01, 'services': 1.54, 'group': 0.38, 'center': 0.67, 'industries': -0.23, 'international': -0.24, 'solutions': -0.2}
+India {'holdings': 1.44, 'enterprises': 0.34, 'services': 0.37, 'group': 0.57, 'center': 2.09, 'industries': 0.3, 'international': -0.59, 'solutions': -0.34}

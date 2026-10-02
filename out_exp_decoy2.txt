@@ -1,0 +1,9 @@
+  India: main channel 6033 queries x 1030999 pool [95s]
+  US: main channel 8967 queries x 1551120 pool [128s]
+[209s] base features (449972, 107)
+[217s] ratio features built
+
+=== 2-fold CV by S1 entity, same pairs, same LightGBM ===
+  existing features      AUC all 0.9995 | AUC hard-subset (42691 pairs) 0.9985 | precision at 90% recall 0.9981
+  + word-ratio features  AUC all 0.9996 | AUC hard-subset (42691 pairs) 0.9990 | precision at 90% recall 0.9983
+[233s] done

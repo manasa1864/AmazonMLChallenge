@@ -1,0 +1,25 @@
+  India: main channel 44194 queries x 207318 pool [25s]
+  US: main channel 66705 queries x 311124 pool [53s]
+[  267s] pairs=3326587, features=107, countries={'US': np.int64(2001064), 'India': np.int64(1325523)}
+[  535s] US->India LightGBM                         in-domain 0.9869 | cross(src thr 0.70) 0.9415 | cross(oracle thr 0.30) 0.9533
+[  713s] US->India LightGBM on country-rank feats   in-domain 0.9870 | cross(src thr 0.75) 0.9357 | cross(oracle thr 0.30) 0.9527
+[  951s] US->India LightGBM + self-training (0.98 of target pairs pseudo-labeled) cross(src thr) 0.9492 | oracle 0.9543
+[ 1116s] India->US LightGBM                         in-domain 0.9794 | cross(src thr 0.70) 0.9823 | cross(oracle thr 0.85) 0.9835
+[ 1275s] India->US LightGBM on country-rank feats   in-domain 0.9791 | cross(src thr 0.75) 0.9802 | cross(oracle thr 0.75) 0.9802
+[ 1473s] India->US LightGBM + self-training (0.99 of target pairs pseudo-labeled) cross(src thr) 0.9812 | oracle 0.9838
+
+=== Unseen-country transfer (proxy for France) ===
+direction                      technique  in_domain_F05  cross_F05_src_thr  cross_F05_oracle_thr  src_thr  oracle_thr
+US->India                       LightGBM         0.9869             0.9415                0.9533     0.70        0.30
+US->India LightGBM on country-rank feats         0.9870             0.9357                0.9527     0.75        0.30
+US->India       LightGBM + self-training            NaN             0.9492                0.9543     0.75        0.30
+India->US                       LightGBM         0.9794             0.9823                0.9835     0.70        0.85
+India->US LightGBM on country-rank feats         0.9791             0.9802                0.9802     0.75        0.75
+India->US       LightGBM + self-training            NaN             0.9812                0.9838     0.75        0.95
+
+Average over the two directions (higher is better):
+                                cross_F05_src_thr  cross_F05_oracle_thr
+technique                                                              
+LightGBM + self-training                   0.9652                0.9691
+LightGBM                                   0.9619                0.9684
+LightGBM on country-rank feats             0.9580                0.9664

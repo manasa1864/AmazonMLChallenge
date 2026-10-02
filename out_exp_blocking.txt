@@ -1,0 +1,20 @@
+[    65s] loaded 551574 S1, 2582119 pool
+  blocked India: 4826 queries x 1030999 pool  [11s]
+  blocked US: 7174 queries x 1551120 pool  [25s]
+A n+a (old)              recall@10/20/40/60 = 0.9168 / 0.9369 / 0.9484 / 0.9536   (27s)
+  blocked India: 4826 queries x 1030999 pool  [13s]
+  blocked US: 7174 queries x 1551120 pool  [30s]
+B n+k+a                  recall@10/20/40/60 = 0.8851 / 0.9099 / 0.9268 / 0.9362   (33s)
+  blocked India: 4826 queries x 1030999 pool  [42s]
+  blocked US: 7174 queries x 1551120 pool  [101s]
+C n+a+addr-bigrams       recall@10/20/40/60 = 0.9251 / 0.9460 / 0.9580 / 0.9640   (107s)
+  blocked India: 4826 queries x 1030999 pool  [52s]
+  blocked US: 7174 queries x 1551120 pool  [85s]
+D n+k+a+bigrams          recall@10/20/40/60 = 0.9291 / 0.9486 / 0.9603 / 0.9659   (88s)
+  blocked India: 4826 queries x 1030999 pool  [32s]
+  blocked US: 7174 queries x 1551120 pool  [65s]
+E D, name weight .7      recall@10/20/40/60 = 0.9216 / 0.9429 / 0.9566 / 0.9636   (68s)
+  blocked India: 4826 queries x 1030999 pool  [33s]
+  blocked US: 7174 queries x 1551120 pool  [97s]
+F D, cap 12000           recall@10/20/40/60 = 0.9425 / 0.9587 / 0.9683 / 0.9732   (105s)
+[   493s] done

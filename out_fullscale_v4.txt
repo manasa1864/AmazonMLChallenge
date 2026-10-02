@@ -1,0 +1,43 @@
+[    20s] train world: 2206821 S1, 10320219 pool records; countries {'US': 1323633, 'India': 883188}
+[   338s] normalised
+  India: main channel 883188 queries x 4133346 pool [464s]
+  US: main channel 1323633 queries x 6186873 pool [1243s]
+[  1707s] blocking: 66202177 pairs (30.0/S1); pair recall 0.9306; India 0.9141; US 0.9416
+          oracle F0.5 ceiling given candidates (on T) = 0.9739
+[  2441s] global comparison features
+[  2767s] T: 396784 S1 entities, 11902870 pairs, 110 features
+[  3012s] stage-1: fold 0 fitted
+[  3244s] stage-1: fold 1 fitted
+[  3299s] stage-1 scored non-T pairs 3000000/54299307
+[  3345s] stage-1 scored non-T pairs 6000000/54299307
+[  3390s] stage-1 scored non-T pairs 9000000/54299307
+[  3434s] stage-1 scored non-T pairs 12000000/54299307
+[  3479s] stage-1 scored non-T pairs 15000000/54299307
+[  3525s] stage-1 scored non-T pairs 18000000/54299307
+[  3570s] stage-1 scored non-T pairs 21000000/54299307
+[  3614s] stage-1 scored non-T pairs 24000000/54299307
+[  3659s] stage-1 scored non-T pairs 27000000/54299307
+[  3704s] stage-1 scored non-T pairs 30000000/54299307
+[  3749s] stage-1 scored non-T pairs 33000000/54299307
+[  3796s] stage-1 scored non-T pairs 36000000/54299307
+[  3843s] stage-1 scored non-T pairs 39000000/54299307
+[  3891s] stage-1 scored non-T pairs 42000000/54299307
+[  3941s] stage-1 scored non-T pairs 45000000/54299307
+[  3988s] stage-1 scored non-T pairs 48000000/54299307
+[  4037s] stage-1 scored non-T pairs 51000000/54299307
+[  4088s] stage-1 scored non-T pairs 54000000/54299307
+[  4100s] stage-1 scored non-T pairs 54299307/54299307
+[  4426s] stage-2: fold 0 fitted
+[  4543s] stage-2: fold 1 fitted
+
+=== Validation at TEST SCALE (held-out train S1 entities, out-of-fold) ===
+  cosine only                  F0.5 = 0.6987 @ thr 0.63
+  stage-1                      F0.5 = 0.9498 @ thr 0.66
+  stage-2 (final)              F0.5 = 0.9529 @ thr 0.65
+  stage-2 on India    (158434 S1): F0.5 = 0.9413
+  stage-2 on US       (238350 S1): F0.5 = 0.9607
+  stage-2 on street-ambiguous S1 (125316): F0.5 = 0.9508
+  ambiguity-conditioned threshold: t_low=0.63 (normal), t_high=0.65 (address shared with other S1) -> F0.5 = 0.9530  (single-threshold was 0.9529)
+  -> no real improvement, keeping the single threshold
+  singletons handled = 0.966; pair precision = 0.9894; pair recall = 0.9023; avg #pred/S1 = 3.16 (true 3.46)
+[  6564s] models saved with prefix models\h (thr=0.650, amb thr=False)

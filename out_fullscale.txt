@@ -1,0 +1,42 @@
+[    19s] train world: 2206821 S1, 10320219 pool records; countries {'US': 1323633, 'India': 883188}
+[   291s] normalised
+  India: main channel 883188 queries x 4133346 pool [394s]
+  US: main channel 1323633 queries x 6186873 pool [1108s]
+[  1491s] blocking: 66202177 pairs (30.0/S1); pair recall 0.9305; India 0.9141; US 0.9415
+          oracle F0.5 ceiling given candidates (on T) = 0.9739
+[  1888s] global comparison features
+[  1942s] T: 220479 S1 entities, 6613942 pairs, 107 features
+[  2005s] stage-1: fold 0 fitted
+[  2103s] stage-1: fold 1 fitted
+[  2194s] stage-1 scored non-T pairs 3000000/59588235
+[  2257s] stage-1 scored non-T pairs 6000000/59588235
+[  2326s] stage-1 scored non-T pairs 9000000/59588235
+[  2395s] stage-1 scored non-T pairs 12000000/59588235
+[  2463s] stage-1 scored non-T pairs 15000000/59588235
+[  2538s] stage-1 scored non-T pairs 18000000/59588235
+[  2627s] stage-1 scored non-T pairs 21000000/59588235
+[  2709s] stage-1 scored non-T pairs 24000000/59588235
+[  2776s] stage-1 scored non-T pairs 27000000/59588235
+[  2843s] stage-1 scored non-T pairs 30000000/59588235
+[  2909s] stage-1 scored non-T pairs 33000000/59588235
+[  2978s] stage-1 scored non-T pairs 36000000/59588235
+[  3046s] stage-1 scored non-T pairs 39000000/59588235
+[  3114s] stage-1 scored non-T pairs 42000000/59588235
+[  3181s] stage-1 scored non-T pairs 45000000/59588235
+[  3251s] stage-1 scored non-T pairs 48000000/59588235
+[  3318s] stage-1 scored non-T pairs 51000000/59588235
+[  3400s] stage-1 scored non-T pairs 54000000/59588235
+[  3483s] stage-1 scored non-T pairs 57000000/59588235
+[  3549s] stage-1 scored non-T pairs 59588235/59588235
+[  3969s] stage-2: fold 0 fitted
+[  4090s] stage-2: fold 1 fitted
+
+=== Validation at TEST SCALE (held-out train S1 entities, out-of-fold) ===
+  cosine only                  F0.5 = 0.6947 @ thr 0.64
+  stage-1                      F0.5 = 0.9439 @ thr 0.67
+  stage-2 (final)              F0.5 = 0.9489 @ thr 0.65
+  stage-2 on India    (87871 S1): F0.5 = 0.9356
+  stage-2 on US       (132608 S1): F0.5 = 0.9577
+  stage-2 on street-ambiguous S1 (69607): F0.5 = 0.9479
+  singletons handled = 0.957; pair precision = 0.9855; pair recall = 0.8999; avg #pred/S1 = 3.16 (true 3.46)
+[  4504s] models saved with prefix models\f (thr=0.650)

@@ -1,0 +1,91 @@
+[     0s] sample: 110250 S1, 516364 pool records (S2=251428, S3=264936); singletons=0.057
+[    33s] normalised
+  blocked India: 43913 queries x 205827 pool  [17s]
+  blocked US: 66337 queries x 310537 pool  [44s]
+[    79s] blocking: 2203780 candidate pairs (20.0/S1); pair recall = 0.9592
+          oracle F0.5 ceiling given candidates = 0.9853
+[   140s] stage-1 features: 103 columns
+
+Baseline v0 (TF-IDF cosine only):
+  cosine                             best F0.5 = 0.9234 @ thr 0.50
+
+Stage 1 (LightGBM OOF):
+[   193s] stage-1: OOF done
+  stage-1                            best F0.5 = 0.9753 @ thr 0.70
+
+Stage 2 (LightGBM on stage-1 context features, OOF):
+[   283s] stage-2: OOF done
+  stage-2                            best F0.5 = 0.9749 @ thr 0.70
+  stage-2 (fine thr)                 best F0.5 = 0.9750 @ thr 0.72
+
+At thr 0.72: singletons handled = 0.982, avg #pred/S1 = 3.28 (true 3.46)
+pair precision = 0.9951  pair recall = 0.9428
+
+Top stage-2 features:
+s_max           3039
+c_sum_other     2819
+c_max           2710
+s_sum           2481
+p1              1996
+blk_score       1971
+blk_ratio       1783
+rv_blk_n        1657
+blk_top1        1478
+rv_blk_gap      1448
+p1_over_smax    1404
+sim_avg         1327
+nm_full_tset    1301
+c_gap           1261
+blk_rank        1257
+
+=== 1787 false-positive pairs; examples
+ S1 : S1-666562342 | Urology Group | 3307 Main Street, AL, Millbrook 
+ FP : S3-245559894 | Urology Metro Inc Services | 3307 Poplar St, Pine Bluff, Arkansas 
+
+ S1 : S1-445083036 | Heartland Business Pvt Ltd | 680/1, Kinfra Road, Koratty, Thrissur, Kerala, Mukundapuram, Thrissur, Kerala 
+ FP : S2-603400388 | Mr -- JAYE5H ESTATE PVT LTD | NO 35 POTTA, ELANJIPRA ROAD, PANAMPILLY COLLAGE, CHALAKUDI R S, THRISSUR, MUKUNDAPURAM, KERALA, INDIA, THRISSUR, MUKUNDAPURAM, Kerala 
+
+ S1 : S1-839288941 | Main Street Tattoo | 1237 Mining School Road, State Road, NC 
+ FP : S2-807301537 | Main Street Tattoo Inc | #1238 MINING SCHOOL RD, PMB 8986, STATE ROAD, NC 
+
+ S1 : S1-773040299 | Navi Mumbai Solutions Private Limited | 53 Jk Chamber Sector 17 Vashi Navi Mumbai, Navi Mumbai, Mumbai City, Maharashtra 
+ FP : S3-576521821 | Navi Mumbai Limited Solutions | Navi Mumbai, Mumbai City, Door No 58 Jk Chamber Sector 17 Vashi Navi Mumbai, MH 
+
+ S1 : S1-772702640 | Fluitt, Chaney & Heckman Culture | 1444 Pine Street, Casper, WY 
+ FP : S2-71921242 | Partners Fluitt, Chaney & Heckman Culture | WY, NULL, CASPER, 01465 PINE STREET 
+
+ S1 : S1-717884782 | Murray States L.L.C. | 59 Old Landing Way, Unit A, Boston, MA 
+ FP : S3-833117731 | LLC Murray States | 70 Old Landing Way, # A, Chralestown CITY, Massachusetts 
+
+ S1 : S1-57916788 | 2792 Fourth Avenue Associates Corp | 928 Owensboro Road, Leitchfield, KY 
+ FP : S3-760050426 | Zephtavo | Owensboro Rd, Leitchfield, Kentucky 
+
+ S1 : S1-213402161 | Capital Electronics LLC | 207 Autumn Brook Lane, Hueytown, AL 
+ FP : S3-212621469 | Eaton Electronics, LLC Services |  
+
+=== 21820 missed true pairs; examples
+ S1 : S1-375396699 | Heritage Highview LLC | 101 Oak Avenue, WI, City Of Marshfield 
+ FN : S3-859938039 | Lyrad0va | Oak Ave, City Of Marshfield, Wisconsin    (NOT in candidates) 
+
+ S1 : S1-801648346 | Connally Premier Equitable | 719 Main Street, Davenport, WA 
+ FN : S3-803358278 | Connally Premier (Équitable) | #719 Main St, Davenport, Washington  
+
+ S1 : S1-309676255 | Creative Energy Limited | 41, Iiird Floor, Manglam Electronic Market Ridhi Sidhi, Gopalpura, Jaipur, Rajasthan 
+ FN : S3-212401548 | क्रिएटिव एनर्जी लिमिटेड | 41, Jaipur, RJ    (NOT in candidates) 
+
+ S1 : S1-498749895 | All Marketing Co | 1, 2, 14-1-2-57, Ig Road, Opp. Annapoorna Electronics, Chikmagalur, Chickmagalur, Karnataka 
+ FN : S3-691616898 | allmarketing.com | Chikmagalur, KA, Chickmagalur, 1  
+
+ S1 : S1-955680615 | Board of Consumer Affairs | 613 21st Street, Moore, OK 
+ FN : S2-916791910 | Board of Cónsumer Affair | 613-C 21th St, OKLAHOM CITY CITY, OK    (NOT in candidates) 
+
+ S1 : S1-347757108 | Seven Tech | Plot No-504, Gotalabindha Satyabhamapur, Tankapani Road, Bhubaneswar, Khordha, Orissa 
+ FN : S2-466147048 | ସେଭେନ୍ ଟେକ୍ | HN 14 POLT NO-504, BHUBANESWAR, Odisha    (NOT in candidates) 
+
+ S1 : S1-936847965 | Coastal Program | 12517 Caitlin Circle, Henrico County, VA 
+ FN : S3-371776944 | Coastal Proamba |     (NOT in candidates) 
+
+ S1 : S1-51839438 | Rev It Up Hair Studio | 2027 21st Street, Phoenix, AZ 
+ FN : S2-395878555 | revitup.com | 002027 21ST ST, PHOEINX, AZ    (NOT in candidates) 
+
+[   372s] done

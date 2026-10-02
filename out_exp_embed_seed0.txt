@@ -1,0 +1,26 @@
+  India: main channel 43913 queries x 205827 pool [17s]
+  US: main channel 66337 queries x 310537 pool [27s]
+[    54s] pairs=3307093, countries={'US': np.int64(1990012), 'India': np.int64(1317081)}, pos rate=0.1135
+[    95s] base features (3307093, 107)
+  [embed] 110250 unique S1 texts, 484289 unique candidate texts
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 2434.39it/s]
+  [embed] 110250 texts in 985s (112/s)
+  [embed] 484289 texts in 4379s (111/s)
+[  5477s] semantic name-similarity feature built
+[  5567s] US->India base (107 feats)       F0.5 = 0.9382 @ thr 0.65
+[  5656s] US->India + semantic name sim    F0.5 = 0.9385 @ thr 0.65
+[  5737s] India->US base (107 feats)       F0.5 = 0.9816 @ thr 0.60
+[  5810s] India->US + semantic name sim    F0.5 = 0.9815 @ thr 0.65
+
+direction           technique    F05  thr
+US->India    base (107 feats) 0.9382 0.65
+US->India + semantic name sim 0.9385 0.65
+India->US    base (107 feats) 0.9816 0.60
+India->US + semantic name sim 0.9815 0.65
+
+technique  + semantic name sim  base (107 feats)    gain
+direction                                               
+India->US               0.9815            0.9816 -0.0001
+US->India               0.9385            0.9382  0.0003
+[  5810s] done

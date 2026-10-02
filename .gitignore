@@ -1,0 +1,10 @@
+﻿# large / regenerable artifacts (too big for GitHub)
+cache/
+output*/
+data/
+*.zip
+# debug models and python cache
+models/dbg*
+__pycache__/
+*.pyc
+.DS_Store

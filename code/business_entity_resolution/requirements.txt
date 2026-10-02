@@ -1,0 +1,13 @@
+# Required by the submitted pipeline (run_fullscale.py, run_test.py) and by it alone.
+pandas==2.2.3
+numpy==2.1.1
+scipy==1.16.1
+scikit-learn==1.5.2
+rapidfuzz==3.14.6
+unidecode==1.4.0
+lightgbm==4.7.0
+pyarrow==25.0.0
+
+# Only needed to run src/embed.py / src/exp_embed.py (the rejected semantic-embedding experiment,
+# Documentation_template.md section 5.4) - NOT required to reproduce output/ or any submitted result.
+# torch (CPU build) ; sentence-transformers

@@ -1,0 +1,7 @@
+[    58s] train world: 2206821 S1, 10320219 pool
+[   975s] normalised
+  India: main channel 883188 queries x 4133346 pool [881s]
+  US: main channel 1323633 queries x 6186873 pool [1564s]
+[  2565s] blocking: 66202177 pairs
+[  3113s] global comparison features
+[  3169s] saved 3967271 source pairs (132247 S1 entities, 0.108 positive) -> cache\source_stage1.npz

@@ -1,0 +1,14 @@
+  India: main channel 15906 queries x 207318 pool [8s]
+  US: main channel 24094 queries x 311124 pool [16s]
+[    32s] pairs=1199901, pos rate=0.1130
+[    45s] features (1199901, 110) (3 new)
+[    84s] both models trained (2-fold OOF)
+
+Overall (all pairs):  base F0.5 = 0.9807 @ 0.70   +name_amb F0.5 = 0.9836 @ 0.70   gain = +0.0029
+S1 with an empty-address candidate (34759 S1 entities): base F0.5 = 0.1317   +name_amb F0.5 = 0.1346   gain = +0.0030
+
+name-ambiguity feature ranks:
+s1_name_amb                487
+c_name_amb                 592
+c_name_amb_x_addr_empty    248
+[   109s] done

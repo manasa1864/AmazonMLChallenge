@@ -1,0 +1,47 @@
+[     0s] models models\g: thr=0.660, trained on frac=1.0, val F0.5=0.9515
+[    65s] test: 1732544 S1, 9969589 pool records; countries: {'India': 809986, 'US': 663106, 'France': 259452}
+[   974s] normalised
+  France: main channel 259452 queries x 1434993 pool [115s]
+  India: main channel 809986 queries x 4717565 pool [1072s]
+  US: main channel 663106 queries x 3817031 pool [1616s]
+[  2610s] blocking: 51970709 candidate pairs (30.0 per S1)
+[  2784s] candidate_pairs.tsv written
+[  3625s] global comparison features done
+[  3771s] stage-1 scored 3000000/51970709
+[  3859s] stage-1 scored 6000000/51970709
+[  3934s] stage-1 scored 9000000/51970709
+[  4070s] stage-1 scored 12000000/51970709
+[  4207s] stage-1 scored 15000000/51970709
+[  4346s] stage-1 scored 18000000/51970709
+[  4475s] stage-1 scored 21000000/51970709
+[  4610s] stage-1 scored 24000000/51970709
+[  4744s] stage-1 scored 27000000/51970709
+[  4874s] stage-1 scored 30000000/51970709
+[  5016s] stage-1 scored 33000000/51970709
+[  5158s] stage-1 scored 36000000/51970709
+[  5276s] stage-1 scored 39000000/51970709
+[  5409s] stage-1 scored 42000000/51970709
+[  5537s] stage-1 scored 45000000/51970709
+[  5662s] stage-1 scored 48000000/51970709
+[  5791s] stage-1 scored 51000000/51970709
+[  5848s] stage-1 scored 51970709/51970709
+[  6417s] stage-2 scored 3000000/51970709
+[  6542s] stage-2 scored 6000000/51970709
+[  6670s] stage-2 scored 9000000/51970709
+[  6798s] stage-2 scored 12000000/51970709
+[  6924s] stage-2 scored 15000000/51970709
+[  6976s] stage-2 scored 18000000/51970709
+[  7014s] stage-2 scored 21000000/51970709
+[  7057s] stage-2 scored 24000000/51970709
+[  7103s] stage-2 scored 27000000/51970709
+[  7148s] stage-2 scored 30000000/51970709
+[  7194s] stage-2 scored 33000000/51970709
+[  7240s] stage-2 scored 36000000/51970709
+[  7287s] stage-2 scored 39000000/51970709
+[  7333s] stage-2 scored 42000000/51970709
+[  7380s] stage-2 scored 45000000/51970709
+[  7426s] stage-2 scored 48000000/51970709
+[  7472s] stage-2 scored 51000000/51970709
+[  7490s] stage-2 scored 51970709/51970709
+[  7490s] scored; 5568570 pairs above threshold 0.660
+[  7512s] wrote output_v3/: 1732544 rows; 5568259 matched ids; 116504 empty (singleton) rows; avg matches/S1 = 3.21

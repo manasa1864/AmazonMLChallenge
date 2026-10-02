@@ -1,0 +1,20 @@
+[    13s] world: 551574 S1, 2582119 pool (cached, no rebuild)
+  India: main channel 220025 queries x 1030999 pool [153s]
+  US: main channel 331549 queries x 1551120 pool [366s]
+[   450s] blocked: 33093413 pairs
+[   469s] K=30  avg_cand/S1= 30.0  recall=0.9658  oracle F0.5 ceiling=0.9876
+[   491s] K=40  avg_cand/S1= 40.0  recall=0.9691  oracle F0.5 ceiling=0.9887
+[   517s] K=45  avg_cand/S1= 45.0  recall=0.9706  oracle F0.5 ceiling=0.9893
+[   548s] K=60  avg_cand/S1= 60.0  recall=0.9742  oracle F0.5 ceiling=0.9907
+
+ K  avg_cand_per_S1  recall  oracle_ceiling
+30          29.9995  0.9658          0.9876
+40          39.9992  0.9691          0.9887
+45          44.9990  0.9706          0.9893
+60          59.9981  0.9742          0.9907
+
+vs current (K=30):
+  K=40  candidates +  33%  recall +0.0033  oracle ceiling +0.0012
+  K=45  candidates +  50%  recall +0.0048  oracle ceiling +0.0017
+  K=60  candidates + 100%  recall +0.0084  oracle ceiling +0.0031
+[   548s] done

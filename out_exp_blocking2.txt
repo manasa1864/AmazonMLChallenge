@@ -1,0 +1,8 @@
+[     3s] loaded 551574 S1, 2582119 pool
+  blocked India: 4826 queries x 1030999 pool  [27s]
+  blocked US: 7174 queries x 1551120 pool  [54s]
+G n+a+bi, k on nonlatin  recall@10/20/40/60 = 0.9264 / 0.9474 / 0.9595 / 0.9654   (57s)
+  blocked India: 4826 queries x 1030999 pool  [24s]
+  blocked US: 7174 queries x 1551120 pool  [49s]
+H G, cap 12000           recall@10/20/40/60 = 0.9361 / 0.9560 / 0.9670 / 0.9721   (52s)
+[   112s] done

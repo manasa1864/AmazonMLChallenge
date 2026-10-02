@@ -1,0 +1,94 @@
+[    50s] sample: 264292 S1, 1237101 pool records (S2=602841, S3=634260); singletons=0.056
+[    73s] normalised
+  India: vectorised 105275 queries x 493387 pool, 1172194 terms [14s]
+  blocked India [22s]
+  US: vectorised 159017 queries x 743714 pool, 1218744 terms [37s]
+  blocked US [41s]
+[   119s] blocking: 7928532 candidate pairs (30.0/S1); pair recall = 0.9742
+          oracle F0.5 ceiling given candidates = 0.9906
+[   191s] stage-1 features: 103 columns
+
+Baseline v0 (TF-IDF cosine only):
+  cosine                             best F0.5 = 0.9039 @ thr 0.45
+
+Stage 1 (LightGBM OOF):
+[   368s] stage-1: OOF done
+  stage-1                            best F0.5 = 0.9714 @ thr 0.70
+
+Stage 2 (LightGBM on stage-1 context features, OOF):
+[  1007s] stage-2: OOF done
+  stage-2                            best F0.5 = 0.9785 @ thr 0.70
+  stage-2 (fine thr)                 best F0.5 = 0.9785 @ thr 0.69
+[  1212s] models saved with prefix models\m (thr=0.690)
+
+At thr 0.69: singletons handled = 0.983, avg #pred/S1 = 3.33 (true 3.46)
+pair precision = 0.9935  pair recall = 0.9565
+
+Top stage-2 features:
+c_max           1983
+s_sum           1919
+c_sum_other     1897
+p1              1811
+s_max           1645
+nm_full_tset    1550
+blk_score       1464
+blk_ratio       1313
+rv_blk_n        1261
+blk_top1        1257
+sim_avg         1065
+rv_blk_gap      1044
+nm_lenratio     1041
+p1_over_smax    1029
+sk_ratio         998
+
+=== 5704 false-positive pairs; examples
+ S1 : S1-946698521 | Unique Consultancy Private Limited | Flat No 4-8-139/1/3 Shivalayam Road, Mushkamahal, Attapur, Hyderabad, Rangareddy, Telangana 
+ FP : S3-430431559 | Unique Cónsultancy Motors | Attapur, Hyderabad, తెలంగాణ, 4-8-139/1/8 Shivalayam Road 
+
+ S1 : S1-708389388 | Surya Foods Private Limited | Ii/273-A, North Edathala Aluva, Ernakulam, Kerala 
+ FP : S2-261324941 | Surya Foods Limited | II/286-A, NORTH EDATHALA ALUVA, Kerala 
+
+ S1 : S1-694520391 | Mountain Alliance Partners | 2740 Red Oak Lane, Monticello, MN 
+ FP : S2-485943944 | Mountain Alliance Partners Inc. |  
+
+ S1 : S1-846159357 | Chitrakoot Yojana Vaishali Nagar Orthocare Limited | Jaipur, Rajasthan, Chitrakoot Yojana Vaishali Nagar, E-6/282 
+ FP : S3-613767986 | Chitrakoot Yojana Vaishali Nagar Orthocare Private Limited | RJ, E-6/303, Jaipur 
+
+ S1 : S1-113644707 | Supreme Payroll Enterprises | 13 Park Place, Suffern, NY 
+ FP : S3-230770969 | Premier Payroll Enterprises |  
+
+ S1 : S1-157810728 | Lantz & Smith Partners | 194 Mcadams Road, Mckenzie, TN 
+ FP : S3-994508788 | Lantz & Smtci Partners LLC | 203 Mcadams Rd, Mckenzie, Tennessee 
+
+ S1 : S1-795155711 | Life Medical Centre Clinic | Ward 11, Village- Darauli, Darauli Siwan Bihar, Siwan, Bihar 
+ FP : S3-188431748 | Life Medical Centre |  
+
+ S1 : S1-927148840 | Christabella's Elite Massage | 1005 James Street, Unit Apt D, Jacksonville, AR 
+ FP : S3-578629465 | Christabella's Élite Massage Corp | 01007 James Street, Jacksonville, Arkansas 
+
+=== 39809 missed true pairs; examples
+ S1 : S1-984823183 | Arihant Shyam Media LLP | 203, Dharam Palace, B - Wing, N.S. Patkar Marg, Mumbai, Mumbai, Maharashtra 
+ FN : S2-389915626 | अरिहंत श्याम मीडिया एलएलपी | 203, MUMBAI, महाराष्ट्र    (NOT in candidates) 
+
+ S1 : S1-868348688 | Moreno Premium LLC | Lovington, NM, 1013 Harrison Avenue 
+ FN : S2-736869383 | Moreno Pfomium LLC |     (NOT in candidates) 
+
+ S1 : S1-727170572 | Cozy Cafe, LLC | 131 Woodland Avenue, Spaulding, IL 
+ FN : S2-947253519 | Cozy Cáfe, LLC |   
+
+ S1 : S1-440460151 | White Engineering LLP | 401, Silver Arcade, 56 Shop, Old Palasia, Indore, Madhya Pradesh 
+ FN : S2-271620840 | व्हाइट इंजीनियरिंग एलएलपी | 4-01, INDORE, Madhya Pradesh    (NOT in candidates) 
+
+ S1 : S1-683900599 | Vasai India Private Limited | 3Rd Floor, Apollo Apartments, Raja Shivaji Road, Above Swara Hospital, Virar West, Vasai, Thane, Maharashtra 
+ FN : S2-677040971 | Miracalomira | H.NO 3RD FLOOR, THANE, Maharashtra    (NOT in candidates) 
+
+ S1 : S1-347757108 | Seven Tech | Plot No-504, Gotalabindha Satyabhamapur, Tankapani Road, Bhubaneswar, Khordha, Orissa 
+ FN : S2-466147048 | ସେଭେନ୍ ଟେକ୍ | HN 14 POLT NO-504, BHUBANESWAR, Odisha    (NOT in candidates) 
+
+ S1 : S1-82767541 | Tirupati Foods Private Limited | Plot No - 481, Saheed Nagar Bhubaneswar, Bhubaneswar, Khordha, Orissa 
+ FN : S3-834003216 | Tirupati F0ods Private  Limited | Plot 804 Plot No - 481, Bhubaneswar, ଓଡ଼ିଶା    (NOT in candidates) 
+
+ S1 : S1-853829563 | Cozy Hair Studio | 41577 130th Avenue, Thompson, IA 
+ FN : S2-780381774 | #cozyhair | THOMPSON, IA, 130RD AVENUE    (NOT in candidates) 
+
+[  1225s] done

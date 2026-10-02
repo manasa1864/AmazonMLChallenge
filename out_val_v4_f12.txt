@@ -1,0 +1,140 @@
+[     4s] sample: 264292 S1, 1237101 pool records (S2=602841, S3=634260); singletons=0.056
+[    79s] normalised
+  India: main channel 105275 queries x 493387 pool [71s]
+  [par_map] attempt 1/4 failed: BrokenProcessPool: A task has failed to un-serialize. Please ensure that the arguments of the function are all picklabl; restarting workers
+  [par_map] attempt 2/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 3/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 4/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] falling back to serial execution
+  India: name channel done [106s]
+  [par_map] attempt 1/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 2/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 3/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 4/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] falling back to serial execution
+  India: addr channel done [200s]
+  [par_map] attempt 1/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 2/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 3/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 4/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] falling back to serial execution
+  India: chr channel done [266s]
+  India: union 4702133 pairs (44.7/S1) [278s]
+  [par_map] attempt 1/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 2/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 3/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 4/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] falling back to serial execution
+  US: main channel 159017 queries x 743714 pool [442s]
+  [par_map] attempt 1/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 2/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 3/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 4/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] falling back to serial execution
+  US: name channel done [511s]
+  [par_map] attempt 1/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 2/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 3/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 4/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] falling back to serial execution
+  US: addr channel done [609s]
+  [par_map] attempt 1/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 2/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 3/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 4/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] falling back to serial execution
+  US: chr channel done [775s]
+  US: union 7057466 pairs (44.4/S1) [794s]
+[   898s] blocking: 11759599 candidate pairs (44.5/S1); pair recall = 0.9809
+          oracle F0.5 ceiling given candidates = 0.9931
+  [par_map] attempt 1/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 2/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 3/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] attempt 4/4 failed: AttributeError: '_ReusablePoolExecutor' object has no attribute '_temp_folder_manager'; restarting workers
+  [par_map] falling back to serial execution
+[  2255s] stage-1 features: 107 columns
+
+Baseline v0 (TF-IDF cosine only):
+  cosine                             best F0.5 = 0.9039 @ thr 0.45
+
+Stage 1 (LightGBM OOF):
+[  2875s] stage-1: OOF done
+  stage-1                            best F0.5 = 0.9736 @ thr 0.70
+
+Stage 2 (LightGBM on stage-1 context features, OOF):
+[  3637s] stage-2: OOF done
+  stage-2                            best F0.5 = 0.9761 @ thr 0.70
+  stage-2 (fine thr)                 best F0.5 = 0.9761 @ thr 0.72
+[  3916s] models saved with prefix models\m2 (thr=0.720)
+
+At thr 0.72: singletons handled = 0.960, avg #pred/S1 = 3.35 (true 3.46)
+pair precision = 0.9904  pair recall = 0.9577
+
+Top stage-2 features:
+p1              1787
+s_sum           1752
+c_sum_other     1668
+c_max           1664
+s_max           1458
+nm_full_tset    1344
+sim_avg         1223
+blk_score       1170
+rv_blk_gap      1144
+rv_sim_gap      1104
+rv_blk_n        1039
+p1_over_smax    1025
+blk_ratio        974
+ad_tsort         970
+nm_lenratio      961
+
+=== 8479 false-positive pairs; examples
+ S1 : S1-231841996 | Kalki (India) Foundation Pvt Ltd | Flat 702, Tower C1, Parsvanth Exotica, Golf Course Road, Gurugram, Gurgaon, Haryana 
+ FP : S3-954693202 | Smt Kalki  (India) Limited Service | Flat G-709, Tower C1, Parsvanth Exotica, Golf Course Road, Gurugram, Gurgaon, हरियाणा 
+
+ S1 : S1-941384570 | Mallika Securitas Ltd | Flat A702, Flr 7, Sipani Bliss Phase2, Upkar Spring Field, Thirumagondanahalli, Chandapura, Bengaluru, Bangalore, Karnataka 
+ FP : S2-334634151 | Smt Mallika Securitas |  
+
+ S1 : S1-396204312 | Straight Edge Grill Group | 2242 Mahoning Avenue, Unit C, Warren, OH 
+ FP : S2-276036315 | STRAIGHT EDGE GRILL GROUP [INC] | OH, WARREN, 2247 MAHONICG AVE 
+
+ S1 : S1-953679495 | Budaia Muzero LP | 747 32nd Avenue, Unit Apartment 309, Eugene, OR 
+ FP : S3-472610808 | Veraonyx Muzero | 747 32th Ave, Unit Apartment 309, Eugene, Oregon 
+
+ S1 : S1-360979515 | Nashville Vision Group | Nashville, AR, 1296 Mine Street 
+ FP : S3-615100799 | Nashville Vision-Group Group | #1297 Mine St, Arkansas, Nashville 
+
+ S1 : S1-808633883 | Hernandez & Brown LLC | 787 Golfers View, Pittsboro, NC 
+ FP : S2-56342584 | Hernandez Services LLC | 6529 192ND AVENUE, BEAVERTON, OR 
+
+ S1 : S1-332073808 | Sterling LLC | 42 Peterborough Street, Unit 42, Boston, MA 
+ FP : S3-777625465 | *** Justine's Inc Center | 42 Third St, South Boston, Massachusetts 
+
+ S1 : S1-852481400 | Daranagar Online Limited | K-54/81-B, Daranagar, Varanasi, Uttar Pradesh 
+ FP : S2-734250189 | CARE ONLINE EXPORTS PRIVATE-LIMITED | NO B 306, DSR KRISHNA ROYALE APARTMENT, MUNNEKOLALA SPICE GARDEN BUS STOP, MARATHALLI, BEHIND MUNNESWARA TEMPLE, BANGALORE NORTH, ಕರ್ನಾಟಕ 
+
+=== 38667 missed true pairs; examples
+ S1 : S1-984823183 | Arihant Shyam Media LLP | 203, Dharam Palace, B - Wing, N.S. Patkar Marg, Mumbai, Mumbai, Maharashtra 
+ FN : S3-133781092 | अरिहंत श्याम मीडिया एलएलपी | 203, Mumbai, MH    (NOT in candidates) 
+
+ S1 : S1-519218067 | Future Tech LLP | E-21, Mjr Platina Kudlu Gate, Hosur Road, Bangalore, Karnataka 
+ FN : S3-159566815 | ಫ್ಯೂಚರ್ ಟೆಕ್ ಎಲ್ಎಲ್‌ಪಿ | E-21, Bangalore, ಕರ್ನಾಟಕ    (NOT in candidates) 
+
+ S1 : S1-826243288 | Pune Services | Hb 3/1, Flat No. 203, Pimpri, Pune, Maharashtra, S.No. 144/49, Pune 
+ FN : S3-120434421 | Pune Services |   
+
+ S1 : S1-235079567 | Laxmi Solutions Private Limited | B-1/383, Second Floor Jj Colony Madanpur Khadar Sarita Vihar, Delhi, South Delhi, Delhi 
+ FN : S3-639412173 | लक्ष्मी सॉल्यूशंस प्राइवेट लिमिटेड | B-/383, Delhi, दिल्ली    (NOT in candidates) 
+
+ S1 : S1-129024811 | Skipper Digitals Private Limited | Secunderabad, #12-13-561, Street No. 14, Lane No. 10, Nagarjuna Nagar, Tarnaka, Telangana, Hyderabad 
+ FN : S3-836199816 | Skipper Digitals Private | #12-13-561, Secunderabad, Hyderabad, TG  
+
+ S1 : S1-280204514 | Atlantic Dividend PC | 732 5th Avenue, Hutchinson, KS 
+ FN : S3-237594807 | Atlantic Dividend |   
+
+ S1 : S1-82767541 | Tirupati Foods Private Limited | Plot No - 481, Saheed Nagar Bhubaneswar, Bhubaneswar, Khordha, Orissa 
+ FN : S3-834003216 | Tirupati F0ods Private  Limited | Plot 804 Plot No - 481, Bhubaneswar, ଓଡ଼ିଶା    (NOT in candidates) 
+
+ S1 : S1-433156151 | Sun Hospitality Private Limited | 206 Japo Commercial Centre, Ram Mandir Road, Goregaon West, Mumbai, Maharashtra 
+ FN : S3-701810434 | SUN Hospitality Private Limited | www.sunhospit.com |     (NOT in candidates) 
+
+[  3935s] done

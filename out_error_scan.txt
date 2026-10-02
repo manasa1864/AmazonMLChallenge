@@ -1,0 +1,285 @@
+[    17s] world: 45000 S1 sample (of 551574), 2582119 pool
+  India: main channel 17992 queries x 1030999 pool [30s]
+  US: main channel 27008 queries x 1551120 pool [61s]
+[    79s] blocked: 1350000 pairs
+[   109s] scored
+[   110s] F0.5 on this sample = 0.9328 (indicative only - partial overlap with model's own training data)
+
+9433 false positives, 3790 false negatives (model scored too low), 5283 false negatives (never retrieved by blocking)
+
+=== FALSE POSITIVES (model said match, ground truth says no) ===
+ S1: S1-845623856 | 'Mountain Alliance' | 'NY, Rome, 416 Bloomfield Street'
+ WRONG: S2-77695094 | 'Mountain Alliance LLC' | ''  amb_street=-1
+
+ S1: S1-647350309 | 'Signature Spade' | '14918 Renfroe Road, Alpine, AL'
+ WRONG: S2-269063975 | 'Foundry PLLC' | '11435 RENFROE RD, ALPINE, AL'  amb_street=1
+
+ S1: S1-968141319 | 'Sweet Auto Body LLC' | '26 A Windsor Place, Brooklyn, NY'
+ WRONG: S2-263575994 | 'Sweet Auto' | ''  amb_street=-1
+
+ S1: S1-235670433 | 'Modern Media Private Limited' | 'C/O Kailas Ramkisan Markad 215 Tisgaon, Ahmednagar, Maharashtra'
+ WRONG: S3-32497335 | 'Modern Media Private Limited' | ''  amb_street=-1
+
+ S1: S1-115696685 | 'Oxley Blue Sachs Inc.' | '5430 Pearl Street, Graceville, FL'
+ WRONG: S3-13451519 | '24HR' | '5457 Brown Street, Graceville, FL'  amb_street=3
+
+ S1: S1-814961619 | 'Wareham Baptist Bright Church' | '21 Patterson Brook Road, Unit C, Wareham, MA'
+ WRONG: S3-676551374 | 'Wareham  Youht Church' | ''  amb_street=-1
+
+ S1: S1-731616919 | 'AI Biotechnologies' | '1005 Main Street, Robinson, IL'
+ WRONG: S3-484913096 | 'The Rapid Biotechnologies' | ''  amb_street=-1
+
+ S1: S1-919538241 | 'New My Logistics Private Limited' | '73, Ist Floor, South Sivan Koil Street Vadapalani, Chennai, Tamil Nadu'
+ WRONG: S2-785691142 | 'My Logistics Limited Private' | ''  amb_street=-1
+
+ S1: S1-406833173 | 'Advanced & Co Private Limited' | '215, 1St Floor, Satyam Enclave, Sahibabad, Ghaziabad, Uttar Pradesh'
+ WRONG: S2-184229262 | 'Advanced Limited  Private Traders' | ''  amb_street=-1
+
+ S1: S1-382518522 | 'Grand Complete United' | '21 Union Street, Meriden, CT'
+ WRONG: S2-160662069 | 'Grand  Complete United' | ''  amb_street=-1
+
+ S1: S1-716801078 | 'Trading Sss International Private Limited' | 'No.114, Nedunchezhian Salai Thillaipuram, Manali, Chennai, Tamil Nadu'
+ WRONG: S3-597051038 | 'Sss International' | ''  amb_street=-1
+
+ S1: S1-99352519 | 'Regional Atlanticus' | '303 Grove Street, Unit 9, Boston, MA'
+ WRONG: S2-623442840 | 'DAVIS-TRI-STATE ATLANTICUS' | ''  amb_street=-1
+
+ S1: S1-990918729 | 'Superior Integrated Australian LP' | '8000 Ambassador Row, Dallas, TX'
+ WRONG: S3-197133183 | 'Superior Green  Australian' | ''  amb_street=-1
+
+ S1: S1-882354471 | 'Manav Finance Private Limited' | 'No.12/1, 2Nd Floor, East Street Neelasandra, Koramangala, Bangalore, Karnataka'
+ WRONG: S2-175452922 | 'Manav Finance Prírvaote Limited' | 'HOUSE NO. 8-1, 2ND FLOOR, BLOCK-C, MOTI NAGAR, NEW DELHI, दिल्ली'  amb_street=0
+
+ S1: S1-374993733 | 'Heritage Infrastructure Brands LLC' | '8053 Parker Hill Road, Sparta, NY'
+ WRONG: S3-602812813 | 'Heritage Infrastructure LLC Services' | ''  amb_street=-1
+
+ S1: S1-836282447 | 'Unified Great Diana LLC' | '110 Middle Road, Damascus, Unit Apt B, AR'
+ WRONG: S3-525825258 | 'Unified Great Efes' | ''  amb_street=-1
+
+ S1: S1-272090845 | 'Arts Coalition Group' | '560 Fire Tower Road, Banks, PA'
+ WRONG: S3-545346145 | 'Custombanksprime.Com' | '560 Fire Tower Road, Banks, Pennsylvania'  amb_street=3
+
+ S1: S1-387060023 | 'Autism Assistance Network' | '2656 330th Street, Madison, KS'
+ WRONG: S2-342056087 | 'AUTISM ASSISTANCE [FEDERATION-LLC]' | ''  amb_street=-1
+
+ S1: S1-368614710 | 'Youth Initiative' | '133 Florence Way, PA, College Twp'
+ WRONG: S2-392193153 | 'Youth [Initiative]' | ''  amb_street=-1
+
+ S1: S1-412163535 | 'Creative Interstate Sterling LLC' | '1430 Sweetman Avenue, Hempstead, NY'
+ WRONG: S2-225537805 | 'STERLING  INTERSTATE SOFTWARE LLC' | ''  amb_street=-1
+
+ S1: S1-895125084 | 'Pioneer Logistics Private Limited' | 'No. 86/22, Geetha Nivas, Perumthatta, Vellaramkunnu, Vythiri, Wayanad, Kerala'
+ WRONG: S3-311233488 | 'Pioneer Logistics Pvt Ltd.' | ''  amb_street=-1
+
+ S1: S1-137348153 | "Frometa's Keystone Development LLC" | '8886 Beatty Road, MN, Cook'
+ WRONG: S2-114434264 | "Jenny's Keystone" | 'BEATTY RD, COOK, MN'  amb_street=5
+
+ S1: S1-334428060 | 'Southern Enterprises Private Limited' | '703 Plt-381/4 Sumer Park, Sethmotisha Xlane Byculla, Mumbai, Maharashtra'
+ WRONG: S2-925526144 | 'suryanthfoods.com' | '2204-, 22 FLOOR, PLOT 381, 4, SUMER PARK SETH MOTISHA X LANE, BYCULLA (E), MUMBAI, Maharashtra'  amb_street=2
+
+ S1: S1-167066238 | 'Jai Infotech Limited' | 'No.767, Parayil Puthen Veedu Paravoorkonam, Thiruvananthapuram, Thiruvananthapuram, Trivandrum, Kerala'
+ WRONG: S3-958371083 | 'Maa Infotech Pvt  Ltd.' | 'Kallumoottil Veedu, Thiruvananthapuram, Trivandrum, KL'  amb_street=0
+
+ S1: S1-259507822 | 'Karilynn Martinez Patriot Adamas PLLC' | '2304 Mc Auliffe Drive, Rockville, MD'
+ WRONG: S2-881277439 | 'Karilynn Martinez Patriot [Adamas]' | ''  amb_street=-1
+
+ S1: S1-642597218 | 'Priya Mercantile (India) Pvt Ltd' | 'H No.93 Dhingar Mansa, T Sabo, Bathinda, Punjab'
+ WRONG: S2-401865571 | 'Sri Priya  Mercantile Pvt (India) Ltd' | ''  amb_street=-1
+
+ S1: S1-348031777 | 'Lucky Nails' | '11137 Green Street, Chicago, IL'
+ WRONG: S3-540158520 | 'Lucky Nails Enterprises' | ''  amb_street=-1
+
+ S1: S1-858270897 | 'Deus, LLC' | 'N1889 Maple Heights Beach Road, Town Of Brothertown, WI'
+ WRONG: S2-65088480 | 'DEUS DEUS LLC' | ''  amb_street=-1
+
+ S1: S1-77038379 | 'Blue Power Private Limited' | 'New Delhi, Laxmi Nagar, E10/12, Triveni Complex Jawar Park, Delhi, 309'
+ WRONG: S3-836032460 | 'Sri Blue Power Private' | ''  amb_street=-1
+
+ S1: S1-673074503 | 'The Dent Ice Cream Inc' | '454 Pacific Boulevard, Hedgesville, WV'
+ WRONG: S2-661800326 | 'THE DENT  ICE CREAM' | ''  amb_street=-1
+
+ S1: S1-83542263 | 'Continental Desert Safety' | '8234 Devon Avenue, Indianapolis, IN'
+ WRONG: S2-50803154 | 'Capital Continental Safety Inc' | ''  amb_street=-1
+
+ S1: S1-727837601 | 'Maid Tavern' | '10150 Highway 17, Newport, AR'
+ WRONG: S3-964363321 | 'Maid (Tavern)' | ''  amb_street=-1
+
+ S1: S1-886992993 | 'Secunderabad Nest Private Limited' | 'Bhuvana Complex, Flat No. 302, 3Rd Floor Patny Centre, Secunderabad, Hyderabad, Telangana'
+ WRONG: S3-985124665 | 'Secunderabad Private Limited Center' | '10, Hyderabad, Secunderabad, Andhra Pradesh'  amb_street=8
+
+ S1: S1-345046995 | 'Straight Edge Pub' | 'NC, 7127 Okelly Chapel Road, Cary'
+ WRONG: S2-958970073 | 'Straight Edge Inc Pub!,' | ''  amb_street=-1
+
+ S1: S1-642479373 | 'Dee Services' | 'B-5/4 E M Bypass (Ektp), Phase-Ii Kolkata, Kolkata, Kolkata, Howrah, West Bengal'
+ WRONG: S3-826485013 | 'Dee Services Corporation' | ''  amb_street=-1
+
+
+=== FALSE NEGATIVES the model SAW but scored too low ===
+ S1: S1-863699383 | 'Indo Business Private Limited' | 'P. No. 81, Panchtara Society, Somalwada, Nagpur, Maharashtra'
+ MISSED: S3-766733687 | 'Úmbramira' | 'P. No. 8-1, Panchtara Society, Somalwada, Nagpur, MH'  amb_street=3
+
+ S1: S1-266290459 | 'Cascade Foundation LP' | '196 Almaden Street, Troutman, NC'
+ MISSED: S2-325728268 | 'Fluxzeta' | '204 ALMADEN STREET, TROUTMAN, NC'  amb_street=5
+
+ S1: S1-577534328 | 'ZJU Hire Private Limited' | 'E-148 E-Block, Ashk Vihar Phase-I, Delhi, North West Delhi, Delhi'
+ MISSED: S3-270185469 | 'ZJU Hire Prívate Limited' | 'North West Delhi, DL, North, E-1-48 E-block'  amb_street=0
+
+ S1: S1-825302312 | 'Back Alley Hair Studio' | '302 Carter Avenue, Denton, MD'
+ MISSED: S3-699163297 | 'Back-Alley Hair Studio' | '164 Carter Avenue, Denton, Maryland'  amb_street=1
+
+ S1: S1-812504430 | 'Diradyne Newbury LLC' | '7100 Glen Hills Drive, Rio Rancho, NM'
+ MISSED: S3-136944023 | 'Diradyne Newbury' | '6100 Glen Hills Drive, Rio Arncho, New Mexico'  amb_street=0
+
+ S1: S1-644041811 | 'Fresh Pilates Inc' | 'South Richmond Hill, NY, 101-61 125 Street'
+ MISSED: S2-220801243 | 'Fresh Pilates' | ''  amb_street=-1
+
+ S1: S1-665040454 | 'Mumbai Tex Limited' | '8/38, Blossam Chs Ltd, Militry Road Marol, Near Seven Hill Hospital, Andheri, (E), Mumbai, Mumbai City, Maharashtra'
+ MISSED: S3-556156527 | 'Marlbmai Tex Limited' | 'No 657 8/38, Blossam Chs Ltd, Militry Road Marol, Near Seven Hill Hospital, Andheri, (E), Mumbai City, Mumbai, महाराष्ट्र'  amb_street=0
+
+ S1: S1-692406335 | 'Rms Trading Private Limited' | 'Vapi, Type Shed No. 2507, Iiird Phase, Nr. Bob, Opp. Rishi Garment, Gidc, Plot No. C-1/B, Gujarat, Valsad'
+ MISSED: S3-386534574 | 'Rms Trading Private Ltd' | 'Plot No. C-8/b, Type Shed No. 2507, Iiird Phase, Nr. Bob, Opp. Rishi Garment, Gidc, Valsad, Vapi, ગુજરાત'  amb_street=0
+
+ S1: S1-767537099 | 'Caldora Sports L.L.C.' | '11827 Boward Court, Maryland Heights, MO'
+ MISSED: S2-135589745 | 'CALDORA  SPORTS' | '11811 BOWARD COURT, MARYLAND HEIGHTS, MO'  amb_street=1
+
+ S1: S1-312366156 | 'Arihant Hospitality Private Limited' | '1-6-37/31/3, Dinakar Nagar, Tirumalagiri, Hyderabad, Telangana'
+ MISSED: S3-306453266 | 'Arihant Hóspitality Private Limited' | 'Dinakar Nagar, Tirumalagiri, TG, 2-6-37/31/3'  amb_street=1
+
+ S1: S1-877284807 | 'IM Biomedical Inc' | '4473 Mountainside Drive, City And Borough Of Juneau, AK'
+ MISSED: S2-259714239 | 'IM BÍOMEDICAL INC' | 'MOUNTAINSIDE DRIVE, PMB 4415, JUNEAU, AK'  amb_street=0
+
+ S1: S1-599647850 | 'Al Producer Private Limited' | 'Taxi Standrampur Road Moradabad, Uttar Pradesh, Moradabad'
+ MISSED: S2-592188689 | 'अल प्रोड्यूसर प्राइवेट लिमिटेड' | 'HN 523 TAXI STANDRAMPUR ROAD MORADABAD, UTTAR PRADESH, MORADABAD, Uttar Pradesh'  amb_street=0
+
+ S1: S1-533756946 | 'Pacific & Brothers Private Limited' | 'Lig 270, 7Th Phase, Kphb Colony, Kukatapally, Hyderabad, Telangana'
+ MISSED: S2-735257059 | 'PACIFIC + BROTHERS PRIVATE' | 'LIG 2-70, 7TH PHASE, KPHB CNLONY, KUKATAPALLY, HYDERABAD, తెలంగాణ'  amb_street=0
+
+ S1: S1-530712412 | 'Bright Solutions Private Limited' | 'Diamond Harbour Road (Postal Address 99, East Barisha Govt. Colony), P.S Thak, Urpukur, Kolkata, West Bengal, 715, Kolkata, Howrah'
+ MISSED: S3-976597681 | 'Bright Solutions Private Ltd' | '71, Diamond Harbour Road (Postal Address 99, East Barisha Govt. Colony), P.s Thak, Urpukur, Kolkata, Kolkata, Howrah, পশ্চিমবঙ্গ'  amb_street=0
+
+ S1: S1-16958635 | 'Youth Ministries III LP' | '8907 Wallington Drive, Houston, TX'
+ MISSED: S3-193737028 | 'Youth Ministries Enterprises' | ''  amb_street=-1
+
+ S1: S1-928387507 | 'Fresh Strategic Affiliated LP' | 'Booneville, 64 John Griffith Drive, KY'
+ MISSED: S3-86925118 | 'Fresh Strategic Affiliated LLC' | '1 John Griffith Dr, PMB 8691, Booneville, Kentucky'  amb_street=0
+
+ S1: S1-335792110 | 'Zimmerman Smart River LLC' | 'VA, Chesapeake City, Unit 831, 409 Tapestry Park Drive'
+ MISSED: S3-450454990 | 'Zimmerman  Smart Enterprises' | ''  amb_street=-1
+
+ S1: S1-811045491 | 'Brt Chamber' | "'10/2 Dhanlakshmi Society, Mogul Lane Matunga West, Mumbai, Maharashtra"
+ MISSED: S3-305551876 | 'Dr Dovayumaveo' | "'10/2 Dhanlakshmi Society, Mumbai, महाराष्ट्र"  amb_street=0
+
+ S1: S1-322129801 | 'Ace Technologies Private Limited' | 'Village Kanan, Near Govt High School Po Morni, Bhoj Tipra, Panchkula, Haryana'
+ MISSED: S3-476700606 | 'एस टेक्नोलॉजीज प्राइवेट लिमिटेड' | 'H.no 453. Villgae Kanan, Near Govt High School Po Morni, Bhoj Tipra, Panchkula, हरियाणा'  amb_street=0
+
+ S1: S1-559982869 | 'Brittni D. Simpson, DO, DDS PC' | '59 Country Lane, Jamestown, KY'
+ MISSED: S3-738873210 | 'Brittni DDS Simpson, DO, D. PC' | 'Country Lane, PMB 1438, Jamestownn CITY, Kentucky'  amb_street=0
+
+ S1: S1-697314485 | 'Maid Grill Inc' | '12115 State Avenue, Unit APT 159, Marysville, WA'
+ MISSED: S3-471991298 | 'Maid-Grill Inc' | '12114 State Avenue, Unit APT 159, Marysville, Washington'  amb_street=0
+
+ S1: S1-962373716 | 'Delta Signature China LLC' | 'LA, 4810 Angleton Court, St. George City'
+ MISSED: S2-617832201 | 'Delta Signature Cinha LLC' | '4725 1/2 ANGLETON COURT, BATON ROUGE, LA'  amb_street=1
+
+ S1: S1-292280192 | 'Fidyne Companies' | '2207 Colt Road, Fl 1, Chandler, AZ'
+ MISSED: S3-176365324 | 'Fidyne Companies' | 'Chandler, 02220 Colt Road, Floor 1, Arizona'  amb_street=0
+
+ S1: S1-652360155 | 'Butt, Coward & Trujillo' | '297 Crystal Cove, 75182, TX'
+ MISSED: S3-191548077 | '>> Butt, Coward & Trujillo LLC' | 'Texas, Sunnyvale, 425 Crystal Cv'  amb_street=0
+
+ S1: S1-715813013 | 'Ujjaendra Roofings Pvt Ltd' | '1901, Tower-C, Oberoi Sky Garden City, Dattapada Road, Borivlai East, Mumbai, Maharashtra'
+ MISSED: S3-977950719 | 'Ujjaendra-Roofings Pvt' | ''  amb_street=-1
+
+ S1: S1-431550965 | 'Valdez Holdings Group L.L.C.' | '3016 Holly Avenue, Unit #8, Milwaukie, OR'
+ MISSED: S2-111044353 | 'VALDEZ HOLDINGS GROUP' | '016 HOLLY AVE, PMB 2135, MILWAUKIE, OR'  amb_street=0
+
+ S1: S1-23015018 | 'Emerald LLC' | 'TX, 2824 St Louis Avenue, Fort Worth'
+ MISSED: S2-128106623 | 'Emerald LLC' | ''  amb_street=-1
+
+ S1: S1-274415036 | 'Apex Food Pvt Ltd' | 'D.No. 8-3-169, Plot No 50, Siddhartha Nagar, Vengal Rao Nagar., Hyderabad, Telangana'
+ MISSED: S2-115765284 | 'ఏపెక్స్ ఫుడ్ ప్రైవేట్ లిమిటెడ్' | 'HYDERABAD, 83175, తెలంగాణ, HYDERABAD, PLOT NO 50, SIDDHARTHA NAGAR, VENGAL RAO NAGAR.'  amb_street=0
+
+ S1: S1-59348959 | 'Sarp Agro Private Limited' | 'New Delhi, 211, Bajaj House, Iind Floor 97, Delhi, Nehru Place'
+ MISSED: S2-830415066 | 'Sarp  Agro Private Ltd' | ''  amb_street=-1
+
+ S1: S1-619402551 | 'Sweet Book Store' | '1045 E Wyatt Road, Midlothian, TX'
+ MISSED: S2-60675166 | 'Sweet Book Store LLC' | '8045 E WYATT ROAD, PO BOX 8483, MIDLOTHIAN, TX'  amb_street=1
+
+ S1: S1-469388636 | 'Dandridge Xii Group' | 'East Wenatchee, 3300 Eighth Street, WA'
+ MISSED: S3-97274702 | 'Dandbied Xii 6roup' | '3300 8st Street, East Wenatchee, Washington'  amb_street=10
+
+ S1: S1-845034438 | 'Huntley Gulf Horizon LLC' | '12 Skehans Lane, West Gardiner, ME'
+ MISSED: S2-182242929 | 'Huntley  Gulf LLC Services' | '11 SKEHANS LN, WEST GARDINER, ME'  amb_street=1
+
+ S1: S1-139000701 | 'Billie Marrs Beauty LLC' | '700 Commerce Park Drive, Grand Prairie, TX'
+ MISSED: S2-338354439 | 'Billie Marrs Beauty' | '900 COMMERCE PARK DRIVE, GRAND PRAIRIE, TX'  amb_street=1
+
+ S1: S1-411307704 | 'Pediatric Dentistry Vanguard Health LLC' | '1045 Three Waters Lane, Southold, NY'
+ MISSED: S2-18495022 | 'Pediatric Dentistry Vanguard Health LLC' | '045 THREE WATERS LN, ORIENT, NY'  amb_street=1
+
+ S1: S1-253393818 | 'BE Infrastructure' | 'Hyderabad, Telangana, Villano18397/9/264Cskgreen Villas, Shadnagar, Rangareddy'
+ MISSED: S2-230570919 | 'BE Ihnbasrtuctulre' | 'VILLANO0018397/9/264CSKGREEN VILLAS, SHADNAGAR, HYDERABAD, Telangana'  amb_street=0
+
+
+=== FALSE NEGATIVES blocking never retrieved ===
+ S1: S1-961802596 | 'Swastik Construction Private Limited' | '1007-Embassy Centre. Nariman Point, Mumbai, Maharashtra'
+ NOT-RETRIEVED: S3-360465814 | '5wastik Construction  Private Limited' | 'Mumbai, 1007-Emabssy Centre. Nariman Point, MH'
+
+ S1: S1-77006301 | 'Buendia Era of Park City (summit Co) Inc' | '3315 Sun Ridge Drive, Bldg BUILDING, Park City (summit Co), UT'
+ NOT-RETRIEVED: S2-287907625 | 'buendiaerapark.com' | 'SUN RIDGE DR, PARK CITY, UT'
+
+ S1: S1-983493303 | 'Al Tech Private Limited' | '7A, Vidyavihar Rly Sh Ctr, Ghatkopar, Ghatkopar E, Near Railway Shopping Comp, Mumbai, Mumbai City, Maharashtra'
+ NOT-RETRIEVED: S2-608932530 | 'अल टेक प्राइवेट लिमिटेड' | 'MUMBAI CITY, 07A, BOMBAY, महाराष्ट्र'
+
+ S1: S1-642582173 | 'Innovative Hospitality' | 'H-324, Gali No- 6 Raj Nagar-Ii, Palam Colony, New Delhi, South West Delhi, Delhi'
+ NOT-RETRIEVED: S2-226537522 | 'इनोवेटिव Hospitality' | 'NEW DELHI, H-32, Delhi, SOUTH WEST DELHI'
+
+ S1: S1-205562545 | 'Hyderabad Bala Private Limited' | 'F1, Sree Sai Sudha Sadan Apartments, Plot 215, Phase 2, Kavuri Hills, Jubileehills, Hyderabad, Telangana'
+ NOT-RETRIEVED: S3-900274829 | 'Hyderabad Bála Private Limited' | 'Fa-1, Hyderabad, null, TG'
+
+ S1: S1-607624254 | 'Supreme Technologies Private Limited' | 'A/28, Sagar Estate - 2, Sarkhej - Sanand Road, Ahmedabad, Gujarat'
+ NOT-RETRIEVED: S2-30215755 | 'સુપ્રીમ ટેક્નોલોજીસ પ્રાઇવેટ લિમિટેડ' | 'AHMEDABAD, Gujarat, A/28, AHMEDABAD'
+
+ S1: S1-923141876 | 'Interstate League' | '143 Macy Street, San Bernardino, CA'
+ NOT-RETRIEVED: S3-337390279 | 'Interstate League Board' | '143 Mahy St, California, San Bernardino'
+
+ S1: S1-206865972 | 'Elite Coastal Inc' | '35 Malton Court, Parkville, MD'
+ NOT-RETRIEVED: S2-230527649 | 'Elite Coastal  Inc' | ''
+
+ S1: S1-633349450 | 'Twisted Grill' | '9118 Colony Cove Drive, Spring, TX'
+ NOT-RETRIEVED: S3-211229506 | 'Twisted Gri1l' | ''
+
+ S1: S1-941533934 | 'Indian Media Private Limited' | 'No. 22, K.R. Patel Shopping Center, At Handod, Sankheda, Sankheda, Vadodara, Gujarat'
+ NOT-RETRIEVED: S3-202571659 | 'ઇન્ડિયન મીડિયા પ્રાઇવેટ લિમિટેડ' | 'No. 22, Vadodara, GJ'
+
+ S1: S1-451913372 | 'Hitech Exports Private Limited' | 'Shop No.24, Westend Plaza Kapashera, New Delhi, South West Delhi, Delhi'
+ NOT-RETRIEVED: S2-332411096 | 'हाईटेक एक्सपोर्ट्स प्राइवेट लिमिटेड' | 'DOOR NO 24, NEW DELHI, SOUTH WEST DELHI, दिल्ली'
+
+ S1: S1-418458066 | 'Orthopedic Diamond Associates L.L.C.' | 'Unit 2, Brookline, 67 Park Street, MA'
+ NOT-RETRIEVED: S2-808656340 | 'DIAMONDASSOCIATES.COM' | '67-71 PARK STREET, BROOKLINE CITY, MA'
+
+ S1: S1-249943287 | 'Urban Developers Private Limited' | 'C/O Shekhar Biswal Grace Cottage, 1St Cross Rd, Ashwini Layout, Near Leela Landmark, Ejipura, Bangalore South, Bangalore, Karnataka'
+ NOT-RETRIEVED: S3-845817585 | 'Urban Private Private Developers Limited' | ''
+
+ S1: S1-580549940 | 'Red Power Private Limited' | 'Delhi, C-28, Lawrance Road, Delhi'
+ NOT-RETRIEVED: S3-75658748 | 'Red Prtoe Private Limited' | 'C-028, Delhi, DL'
+
+ S1: S1-629362663 | 'Bright Tech Private Limited' | 'B-03, Second Floor, 46 Manas Enclave Faridi Nagar, Lucknow, Uttar Pradesh'
+ NOT-RETRIEVED: S2-608092254 | 'ब्राइट टेक प्राइवेट लिमिटेड' | '#16- B-03, LUCKNOW, INDRANAGAR, Uttar Pradesh'
+
+ S1: S1-939107790 | 'Life Investment Private Limited' | '1/8, Blue Chintamani Chs, Kadwalane, Jambli Naka, Thane, Maharashtra'
+ NOT-RETRIEVED: S2-106238002 | 'लाइफ इन्वेस्टमेंट प्राइवेट लिमिटेड' | '1/8, THANE, महाराष्ट्र'
+
+ S1: S1-754303128 | 'Dowling Mellon Group' | '3228 Mountain Valley Road, Rockingham County, VA'
+ NOT-RETRIEVED: S2-372781839 | 'D0wling Mellon' | '228 MOUNTAIN VALLEY RD, KEEZLETOWN, VA'
+
+ S1: S1-344816726 | 'Global Alpha Consultancy Private Limited' | 'No.9, Devi Karumariamman Koil Street Indra Nagar, Pallikaranai, Chennai, Tamil Nadu'
+ NOT-RETRIEVED: S2-713429346 | 'குளோபல் ஆல்ஃபா கன்சல்டன்சி பிரைவேட் லிமிடெட்' | '9, CHENNAI, Tamil Nadu'
+
+ S1: S1-808713653 | 'Aditya Estate Private Limited' | '11/138U, Al- Kabeer Complex, Kokkur P.O, Kokkur, Malappuram, Malappuram, Malapuram, Kerala'
+ NOT-RETRIEVED: S3-981658644 | 'Private Aditya Estate Limited' | '11/138, Calicut Region, Malapuram, KL'
+
+ S1: S1-884813657 | 'Magna Foundation Ltd' | '1473, Iii Cross, E Blocka.E.C.S.Lay Out Kundalahalli, Bangalore, Karnataka'
+ NOT-RETRIEVED: S2-657472284 | '>> magnafoundation.com' | '##1473, BANGALORE, Karnataka'
+
+[   112s] done

@@ -1,0 +1,85 @@
+﻿[   147s] sample: 110250 S1, 516364 pool records (S2=251428, S3=264936); singletons=0.057
+[   155s] normalised
+  blocked India: 43913 queries x 205827 pool  [4s]
+  blocked US: 66337 queries x 310537 pool  [9s]
+[   165s] blocking: 2203207 candidate pairs (20.0/S1); pair recall = 0.9720
+          oracle F0.5 ceiling given candidates = 0.9896
+          true pairs with same country label: 1.0000
+[   217s] features: 34 columns
+
+Baseline v0 (TF-IDF cosine only, + one-S1-per-record):
+  cosine                       best F0.5 = 0.9334 @ thr 0.50
+[   256s] model trained (2-fold OOF)
+
+Baseline v1 (LightGBM OOF + one-S1-per-record):
+  lightgbm                     best F0.5 = 0.9765 @ thr 0.70
+  (same thr, WITHOUT one-S1-per-record step: 0.9761)
+
+At thr 0.70: singletons handled = 0.966, avg #pred/S1 = 3.33 (true 3.46)
+pair precision = 0.9923  pair recall = 0.9537
+
+Top features:
+nm_full_tset    3320
+rv_blk_n        2947
+blk_score       2753
+blk_ratio       2376
+nm_lenratio     2349
+blk_top1        2262
+ad_tset         2202
+ad_jac          2082
+nm_partial      1984
+ad_partial      1943
+nm_jw           1849
+ad_tsort        1841
+
+=== 2808 false-positive pairs; examples
+ S1 : S1-337947849 | Ronak Weaving (India) Private Limited | House No.28 Third Floor, Pocket-13, Sector 24, Rohini, North Delhi, Delhi 
+ FP : S2-620311274 | Ronak Services (India) Private Limited | HOUSE NO.32 THIRD FLOOR, POCKET-13, SECTOR 24, ROHINI, Delhi 
+
+ S1 : S1-125218591 | Classic Infraheight Private Limited | 2-2-1130/19/4 S-12, Shivam Apartment, Musheerabad, Hyderabad, Telangana 
+ FP : S2-92236120 | RY LLP  Solar | #2-2-1130/19/11 S-12, SHIVAM APARTMENT, MUSHEERABAD, Telangana 
+
+ S1 : S1-168319760 | Bgs Services | 5/1, Muzaffar Ahmed Street (Ripon Street), Ward No. 63 3Rd Floor, Kolkata, Kolkata, Howrah, West Bengal 
+ FP : S3-818487754 | Bgs Services Infratech | Kolkata, WB, Howrah, Door No 34 5/3 
+
+ S1 : S1-150949005 | Baba United Solutions Private Limited | No.21/1, Gandhi Main Road, Ambattur, Tiruvallur, Tamil Nadu 
+ FP : S2-761072810 | BABA UNITED SOLUTIONS  PUBLIC-LIMITED | NO.21/8- , GANDHI MAIN ROAD, AMBATTUR, தமிழ்நாடு 
+
+ S1 : S1-700435401 | Credit Electronics Networks PC | 7275 Phelps Avenue, Huron, NY 
+ FP : S2-36815062 | Credit Electronics Networks Ltd | 7282 PHELPS AVE, WOLCOTT TOOWNSHIP, NY 
+
+ S1 : S1-492867085 | Wilkinson and Bruce | 3119 Center Street, Warsaw, IN 
+ FP : S2-146394813 | Wilkinson and Bruce Corp | 312 CENTER ST, WARSAW, IN 
+
+ S1 : S1-711911595 | Ayaan Realty Limited | 509-510, Meadows, Sahar Plaza, Andheri Kurla Road, Andheri (East), Mumbai, Mumbai City, Maharashtra 
+ FP : S2-741047661 | Meenaya Limited Partners | 509 - 510, MEADOWS, SAHAR PLAZA, ANDHERI KURLA ROAD, ANDHERI (EAST), MUMBAI, Maharashtra 
+
+ S1 : S1-534672293 | Vadodara Leather Company | Plot No. 5 And 6, Near Shivam Flats Opp Amar Park Society, Vip Road, Karelib, Aug, Gujarat, Vadodara 
+ FP : S3-195920645 | Private Vadodara Hospitality Limited | 5 And 6, Baroda, Vadodara, GJ 
+
+=== 17661 missed true pairs; examples
+ S1 : S1-199471707 | Perry Sanchez, Esq. | 1292 Olson Road, Rochester, IN 
+ FN : S2-465220473 | Perry Shohtt, Esq. |   
+
+ S1 : S1-288769287 | Laxmi Technologies Private Limited | 88/5, Richmond Road, Bangalore North, Bangalore, Karnataka 
+ FN : S2-960781361 | ಲಕ್ಷ್ಮಿ ಟೆಕ್ನಾಲಜೀಸ್ ಪ್ರೈವೇಟ್ ಲಿಮಿಟೆಡ್ | 88/5, BANGALORE NORTH, BANGALORE, Karnataka    (NOT in candidates) 
+
+ S1 : S1-640852645 | Kolkata Industrial Private Limited | 1St Floor 155 C R Avenue, Kolkata, Howrah, West Bengal 
+ FN : S3-936216063 | Kolkata Insutrihal Private (Limited) | H.no 1St Floor 155 C R Avenue, Howrah, Burrabazar, WB    (NOT in candidates) 
+
+ S1 : S1-486225249 | Tammara Stephens Federal Rithm, Inc | 918 9th Street, West Terre Haute, IN 
+ FN : S3-933269054 | Tammara Stephens Federal | 45 9th St, PO Box 4030, West Terre Haute, Indiana  
+
+ S1 : S1-550813649 | Foot & Ankle Physicians LLC | 1301 Garden Circle, Lynden, WA 
+ FN : S2-112279443 | Foot & Ankle Physicians [LLC] |   
+
+ S1 : S1-155647775 | International Projects Private Limited | 105, Maharwal Bhawan Shyopur, Pratap Nagar, Rajasthan, Jaipur 
+ FN : S3-179643842 | इंटरनेशनल प्रोजेक्ट्स प्राइवेट लिमिटेड | Block D-675 105, Jaipur, RJ    (NOT in candidates) 
+
+ S1 : S1-488275912 | Bangalore Transport Private Limited | No.950, Swamy Complex, J.P.Nagar, Phase Ii, Bangalore, Karnataka 
+ FN : S3-712251829 | Bangalore Private Limited Center Trading |   
+
+ S1 : S1-48720115 | Jay Technology Private Limited | 1B, Spring Waters, Kunnukadu, Kovallam Village Opp Hotel Taj Vivantha, Ecr, Chengalput T, Aluk, Kancheepuram, Tamil Nadu 
+ FN : S3-676951098 | Jay Techn0logy Pbrivote Limited | Block A-404 1B, Chengalpattu, TN    (NOT in candidates) 
+
+[   278s] done

@@ -1,0 +1,49 @@
+  India: vectorised 105275 queries x 493387 pool, 1172194 terms [15s]
+  blocked India [25s]
+  US: vectorised 159017 queries x 743714 pool, 1218744 terms [42s]
+  blocked US [47s]
+[   164s] pairs=7928532, features=103, blocking pair recall=0.9742
+
+=== Results (same held-out world; official macro F0.5) ===
+  cosine only (TF-IDF blocking score)            F0.5 = 0.9039 @ thr 0.45
+[   297s] LR done
+  Logistic Regression (stage-1 features)         F0.5 = 0.9610 @ thr 0.66
+[   572s] stage-1 LightGBM done
+  LightGBM stage-1                               F0.5 = 0.9713 @ thr 0.73
+  LightGBM stage-1, NO one-S1-per-record rule    F0.5 = 0.9699 @ thr 0.74
+[   699s] context + consensus features built
+[   948s] stage-2 (+consensus) done
+  LightGBM stage-2 + consensus features          F0.5 = 0.9775 @ thr 0.66
+    same, NO one-S1-per-record rule              F0.5 = 0.9773 @ thr 0.74
+  (reference: stage-2 without consensus features scored 0.9785 in run_validation.py)
+  two-threshold: [0.3,0.66) accepted if house-number equal               F0.5 = 0.9771
+  two-threshold: [0.5,0.66) accepted if house-number equal               F0.5 = 0.9774
+  two-threshold: [0.66,0.76) rejected unless house-number equal               F0.5 = 0.9775
+  two-threshold: [0.66,0.86) rejected unless house-number equal               F0.5 = 0.9764
+  two-threshold: [0.3,0.66) accepted if house-number equal & name>=60    F0.5 = 0.9774
+  two-threshold: [0.5,0.66) accepted if house-number equal & name>=60    F0.5 = 0.9775
+  two-threshold: [0.66,0.76) rejected unless house-number equal & name>=60    F0.5 = 0.9775
+  two-threshold: [0.66,0.86) rejected unless house-number equal & name>=60    F0.5 = 0.9763
+  two-threshold: [0.3,0.66) accepted if address>=90 & name>=50           F0.5 = 0.9764
+  two-threshold: [0.5,0.66) accepted if address>=90 & name>=50           F0.5 = 0.9771
+  two-threshold: [0.66,0.76) rejected unless address>=90 & name>=50           F0.5 = 0.9775
+  two-threshold: [0.66,0.86) rejected unless address>=90 & name>=50           F0.5 = 0.9770
+
+=== Blocking channels (60k queries, same pool) ===
+  current combined channel, top-30: recall 0.9739, 30.0 cand/S1
+  India: vectorised 23800 queries x 493387 pool, 101948 terms [2s]
+  blocked India [6s]
+  US: vectorised 36200 queries x 743714 pool, 170721 terms [9s]
+  blocked US [14s]
+  name-word channel top-10         alone recall 0.5733; union so far: recall 0.9756, 36.6 cand/S1  (29s)
+  India: vectorised 23800 queries x 493387 pool, 1018499 terms [12s]
+  blocked India [14s]
+  US: vectorised 36200 queries x 743714 pool, 961654 terms [25s]
+  blocked US [25s]
+  address channel top-10           alone recall 0.8879; union so far: recall 0.9768, 38.2 cand/S1  (40s)
+  India: vectorised 23800 queries x 493387 pool, 21345 terms [6s]
+  blocked India [6s]
+  US: vectorised 36200 queries x 743714 pool, 27626 terms [14s]
+  blocked US [16s]
+  char-3gram name channel top-10   alone recall 0.5787; union so far: recall 0.9806, 44.5 cand/S1  (32s)
+[  1187s] done

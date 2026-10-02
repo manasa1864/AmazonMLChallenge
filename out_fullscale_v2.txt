@@ -1,0 +1,56 @@
+[    73s] train world: 2206821 S1, 10320219 pool records; countries {'US': 1323633, 'India': 883188}
+[  1040s] normalised
+  India: main channel 883188 queries x 4133346 pool [983s]
+  India: name channel done [1157s]
+C:\Users\Manasa\AppData\Roaming\Python\Python312\site-packages\joblib\externals\loky\process_executor.py:782: UserWarning: A worker stopped while some jobs were given to the executor. This can be caused by a too short worker timeout or by a memory leak.
+  warnings.warn(
+Process LokyProcess-19:
+Traceback (most recent call last):
+  File "C:\Users\Manasa\AppData\Roaming\Python\Python312\site-packages\joblib\externals\loky\process_executor.py", line 453, in _process_worker
+    call_item = call_queue.get(block=True, timeout=timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\multiprocessing\queues.py", line 114, in get
+    raise Empty
+_queue.Empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+  File "C:\Program Files\Python312\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\Manasa\AppData\Roaming\Python\Python312\site-packages\joblib\externals\loky\process_executor.py", line 458, in _process_worker
+    if processes_management_lock.acquire(block=False):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 6] The handle is invalid
+  [par_map] attempt 1/3 failed: TerminatedWorkerError: A worker process managed by the executor was unexpectedly terminated. This could be caused by a segm
+  India: addr channel done [2308s]
+  India: chr channel done [2576s]
+  India: union 38877099 pairs (44.0/S1) [2668s]
+  US: main channel 1323633 queries x 6186873 pool [3722s]
+  US: name channel done [4017s]
+  US: addr channel done [4773s]
+  US: chr channel done [5227s]
+  US: union 57607511 pairs (43.5/S1) [5404s]
+[  6636s] blocking: 96484610 pairs (43.7/S1); pair recall 0.9404; India 0.9247; US 0.9509
+          oracle F0.5 ceiling given candidates (on T) = 0.9778
+[  8246s] global comparison features
+[  8523s] T: 220479 S1 entities, 9641605 pairs, 111 features
+[  8728s] stage-1: fold 0 fitted
+[  8935s] stage-1: fold 1 fitted
+[  9082s] stage-1 scored non-T pairs 3000000/86843005
+[  9203s] stage-1 scored non-T pairs 6000000/86843005
+[  9327s] stage-1 scored non-T pairs 9000000/86843005
+[  9446s] stage-1 scored non-T pairs 12000000/86843005
+[  9571s] stage-1 scored non-T pairs 15000000/86843005
+[  9698s] stage-1 scored non-T pairs 18000000/86843005
+[  9822s] stage-1 scored non-T pairs 21000000/86843005
+[  9942s] stage-1 scored non-T pairs 24000000/86843005
+[ 10060s] stage-1 scored non-T pairs 27000000/86843005
+[ 10181s] stage-1 scored non-T pairs 30000000/86843005
+[ 10305s] stage-1 scored non-T pairs 33000000/86843005
+[ 10432s] stage-1 scored non-T pairs 36000000/86843005
+[ 10555s] stage-1 scored non-T pairs 39000000/86843005
+[ 10680s] stage-1 scored non-T pairs 42000000/86843005
+[ 10800s] stage-1 scored non-T pairs 45000000/86843005

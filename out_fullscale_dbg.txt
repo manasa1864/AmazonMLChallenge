@@ -1,0 +1,23 @@
+[     0s] train world: 10968 S1, 50925 pool records; countries {'US': 6533, 'India': 4435}
+[     3s] normalised
+  India: main channel 4435 queries x 20419 pool [4s]
+  US: main channel 6533 queries x 30506 pool [14s]
+[    17s] blocking: 326382 pairs (29.8/S1); pair recall 0.9937; India 0.9897; US 0.9963
+          oracle F0.5 ceiling given candidates = 0.9980
+[    26s] global comparison features
+[    45s] T: 6611 S1 entities, 196744 pairs, 107 features
+[    50s] stage-1: fold 0 fitted
+[    53s] stage-1: fold 1 fitted
+[    58s] stage-1 scored non-T pairs 129638/129638
+[    70s] stage-2: fold 0 fitted
+[    82s] stage-2: fold 1 fitted
+
+=== Validation at TEST SCALE (held-out train S1 entities, out-of-fold) ===
+  cosine only                  F0.5 = 0.9554 @ thr 0.42
+  stage-1                      F0.5 = 0.9915 @ thr 0.97
+  stage-2 (final)              F0.5 = 0.9915 @ thr 0.81
+  stage-2 on India    (2674 S1): F0.5 = 0.9890
+  stage-2 on US       (3937 S1): F0.5 = 0.9932
+  stage-2 on street-ambiguous S1 (139): F0.5 = 0.9884
+  singletons handled = 0.988; pair precision = 0.9958; pair recall = 0.9865; avg #pred/S1 = 3.38 (true 3.42)
+[    88s] models saved with prefix models\dbg (thr=0.810)

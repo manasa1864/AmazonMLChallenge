@@ -1,0 +1,16 @@
+  India: main channel 43913 queries x 205827 pool [17s]
+  US: main channel 66337 queries x 310537 pool [34s]
+[  114s] pairs=3307093, features=107, countries={'US': np.int64(1990012), 'India': np.int64(1317081)}
+[  247s] India->US LightGBM on country-rank feats   in-domain 0.9792 | cross(src thr 0.75) 0.9785 | cross(oracle thr 0.75) 0.9785
+[  325s] India->US LightGBM + self-training (0.99 of target pairs pseudo-labeled) cross(src thr) 0.9792 | oracle 0.9812
+
+=== Unseen-country transfer (proxy for France) ===
+direction                      technique  in_domain_F05  cross_F05_src_thr  cross_F05_oracle_thr  src_thr  oracle_thr
+India->US LightGBM on country-rank feats         0.9792             0.9785                0.9785     0.75        0.75
+India->US       LightGBM + self-training            NaN             0.9792                0.9812     0.80        0.95
+
+Average over the two directions (higher is better):
+                                cross_F05_src_thr  cross_F05_oracle_thr
+technique                                                              
+LightGBM + self-training                   0.9792                0.9812
+LightGBM on country-rank feats             0.9785                0.9785

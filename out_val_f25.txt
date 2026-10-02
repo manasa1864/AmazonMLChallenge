@@ -1,0 +1,86 @@
+[   187s] sample: 551574 S1, 2582119 pool records (S2=1258767, S3=1323352); singletons=0.056
+[   309s] normalised
+  blocked India: 220025 queries x 1030999 pool  [74s]
+  blocked US: 331549 queries x 1551120 pool  [123s]
+[   441s] blocking: 11025996 candidate pairs (20.0/S1); pair recall = 0.9381
+          oracle F0.5 ceiling given candidates = 0.9760
+          true pairs with same country label: 1.0000
+[  1040s] features: 34 columns
+
+Baseline v0 (TF-IDF cosine only, + one-S1-per-record):
+  cosine                       best F0.5 = 0.8550 @ thr 0.55
+[  1301s] model trained (2-fold OOF)
+
+Baseline v1 (LightGBM OOF + one-S1-per-record):
+  lightgbm                     best F0.5 = 0.9515 @ thr 0.70
+  (same thr, WITHOUT one-S1-per-record step: 0.9509)
+[  1563s] final model saved to models\lgbm_f25.txt (thr=0.70)
+
+At thr 0.70: singletons handled = 0.938, avg #pred/S1 = 3.18 (true 3.46)
+pair precision = 0.9855  pair recall = 0.9049
+
+Top features:
+nm_full_tset    3673
+rv_blk_n        2734
+blk_score       2533
+nm_partial      2200
+nm_lenratio     2195
+rv_sim_gap      2173
+nm_jw           2135
+rv_sim_rank     2065
+nm_jac          2003
+nm_first_jw     1966
+rv_blk_rank     1919
+nm_tsort        1866
+
+=== 25481 false-positive pairs; examples
+ S1 : S1-314256215 | Caroljean Gallo Blue Grupo LLC | 409 Center Street, Plymouth, IN 
+ FP : S3-547585085 | Caroljean Gállo Blue Grúpo LLC |  
+
+ S1 : S1-968903730 | Yeager Lifestyle LLC | Woodinville, WA, 14617 168th Avenue 
+ FP : S3-833119983 | Complete Platinum Lifestyle Inc. |  
+
+ S1 : S1-374007827 | Ss Systems Pvt Ltd | Flat No-1202, A Wing, Acp Office Maple, Roasalie Complex, Godrej Hill, Ka, Lyan West, Mumbai, Thane, Maharashtra 
+ FP : S2-377097080 | Ss Food Private-Limited |  
+
+ S1 : S1-485677484 | Infrastructure Urban Academy Private Limited | Uttar Pradesh, Bulandshahr, Sikandrabad, Plot No. E/49, Upsidc Industrial Area 
+ FP : S2-292596537 | Infrastructure Urban Academy Limited | PLOT NO. E/#70, UPSIDC INDUSTRIAL AREA, SIKANDRABAD, Uttar Pradesh 
+
+ S1 : S1-131324606 | Northern Osisko | 280 Walden Way, Unit 613, Dayton, OH 
+ FP : S3-603219392 | Northern Osisko Corp | Beavercreek Twp, Unit 613, Ohio, 287 Walden Way 
+
+ S1 : S1-106867605 | Northern Rocket | 3411 Shea Court, Arlington, TX 
+ FP : S3-548020567 | Northern Rocket Central lnc | 341 Shea Ct, Arlington, Texas 
+
+ S1 : S1-830864751 | Prime Ss Services Limited | Gme Pawana Appt.Pl-7A/11 Sec-29 Pcntda Ravet Fl-06 Sec-29 Pcntda Ravet Fl-06, Pune, Maharashtra 
+ FP : S3-972570732 | Private Es Services Infratech Limited | Door No 934 Gme Pawana Appt.pl-7a/11 Sec-29 Pcntda Ravet Fl-06 Sec-29 Pcntda Ravet Fl-11, Poona, महाराष्ट्र, Pune 
+
+ S1 : S1-423324475 | Warangal Technologies Pvt. Ltd. | 16-3-797, Fort Road, Warangal, Warangal Urban, Telangana 
+ FP : S2-486834765 | Warangal Technologies Enterprises Pvt. Ltd. | 16-3-804, FORT ROAD, WARANGAL, తెలంగాణ 
+
+=== 181731 missed true pairs; examples
+ S1 : S1-231420534 | United Stellar Co | Canal Winchester, OH, 5197 Echelon Drive 
+ FN : S3-89800029 | United Selralr Co |     (NOT in candidates) 
+
+ S1 : S1-34102142 | Celie's Motors | 435 Orchard Avenue, Hermiston, OR 
+ FN : S3-933833368 | Celie's Motors | 66 Orchard Avenue, Hermiston, Oregon  
+
+ S1 : S1-36734045 | Grace Church | 2007 18th Place, Renton, WA 
+ FN : S3-864800420 | Grace Church Ventures |   
+
+ S1 : S1-657842839 | Seven Producer Pvt Ltd | 158, Maji Upsarpanch, Hargude Vasti, Pune -Nagar Road, Sanaswadi, Pune, Maharashtra 
+ FN : S2-146542032 | सेवन प्रोड्यूसर प्रा. लि. | 00158, PUNE, Maharashtra    (NOT in candidates) 
+
+ S1 : S1-220070060 | Balaji International LLP | B-3/32, Ashok Vihar, Phase-Ii, New Delhi, Delhi 
+ FN : S3-939423290 | Balaji International L.L.P. | B-3/32, Ashok Vihar, Phase-ii, New Delhi, Delhi, DL    (NOT in candidates) 
+
+ S1 : S1-107107894 | Brightio Eye Care LLC | 4182 Brinsworth Drive, Dublin, OH 
+ FN : S3-186222948 | Brightio-Eye Care LLC |   
+
+ S1 : S1-450877823 | Apd Trading Private Limited | F 105, Ground Floor, Sadar Bazar, Gurgaon, Haryana 
+ FN : S2-651062371 | Shri #apdtrading | F 105, GROUND FLOOR, SADAR BAZAR, Haryana    (NOT in candidates) 
+
+ S1 : S1-97501380 | Leone Trusted Restaurant PC | 2801 Anderson Street, Bristol, TN 
+ FN : S2-869970622 | Leone Trústed PC-Services | 2802 ANDERSON STREET, BRISTOL, TN  
+
+[  1578s] done

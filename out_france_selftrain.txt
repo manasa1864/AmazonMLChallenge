@@ -1,0 +1,16 @@
+[    17s] France: 259452 S1, 1434993 pool records
+  France: main channel 259452 queries x 1434993 pool [31s]
+[    80s] blocking: 7780960 pairs
+[   124s] features 2000000/7780960
+[   138s] features 4000000/7780960
+[   153s] features 6000000/7780960
+[   166s] features 7780960/7780960
+[   263s] baseline rebuilt: 743025 matched ids
+[   268s] GATE: France rows reproduced exactly (as sets) = 0.9999
+[   281s] self-training set: 1500000 labeled source pairs (0.108 pos) + 1500000 pseudo-labeled France pairs (0.093 pos; 0.96 of France pairs were confident)
+[   313s] adapted stage-1 model 0 fitted
+[   347s] adapted stage-1 model 1 fitted
+
+France: avg matches/S1 2.864 -> 2.901 | empty rows 0.076 -> 0.074 | rows changed 0.094 | pairs added 18368, removed 8640
+  mean prob of pairs above 0.5: base 0.9711, adapted 0.9723; pairs above threshold: base 743254, adapted 753125
+[   460s] wrote output_v4_france_selftrain/matching_results.tsv (only France rows differ from output_v3; candidates unchanged)
